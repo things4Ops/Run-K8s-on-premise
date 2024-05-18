@@ -50,3 +50,5 @@ data:
   POSTGRES_DB: ps_db
   POSTGRES_USER: ps_user
   POSTGRES_PASSWORD: SecurePassword
+  POSTGRES_PORT: 5432
+  POSTGRES_HOST: postgres-service
