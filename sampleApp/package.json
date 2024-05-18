@@ -1,0 +1,13 @@
+{
+    "name": "mukulsri/test_public",
+    "version": "1.0.0",
+    "description": "Node.js application",
+    "main": "app.js",
+    "scripts": {
+        "build": "docker build  -t $(node -e 'console.log(`${process.env.npm_package_name}:${process.env.npm_package_version}`);') . && docker push $(node -e 'console.log(`${process.env.npm_package_name}:${process.env.npm_package_version}`);')"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "pg": "^8.5.1"
+    }
+}
