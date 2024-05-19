@@ -68,6 +68,7 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgresdata
+              subPath: postgresql # Ensure it mounts within the persistent volume correctly
       volumes:
         - name: postgresdata
           persistentVolumeClaim:
