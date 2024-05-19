@@ -10,21 +10,21 @@ function decodeEnv(encodedValue) {
 }
 
 function connectToPostgreSQL() {
-  const client = new Client({
-    user: decodeEnv(process.env.POSTGRES_USER),
-    host: decodeEnv(process.env.POSTGRES_HOST),
-    database: decodeEnv(process.env.POSTGRES_DB),
-    password: decodeEnv(process.env.POSTGRES_PASSWORD),
-    port: decodeEnv(process.env.POSTGRES_PORT),
+// When K8s secret is used
+  // const client = new Client({
+  //   user: decodeEnv(process.env.POSTGRES_USER),
+  //   host: decodeEnv(process.env.POSTGRES_HOST),
+  //   database: decodeEnv(process.env.POSTGRES_DB),
+  //   password: decodeEnv(process.env.POSTGRES_PASSWORD),
+  //   port: decodeEnv(process.env.POSTGRES_PORT),
+  // });
+    const client = new Client({
+    user: process.env.POSTGRES_USER,
+    host: process.env.POSTGRES_HOST,
+    database: process.env.POSTGRES_DB,
+    password: process.env.POSTGRES_PASSWORD,
+    port: process.env.POSTGRES_PORT,
   });
-  let envVar={
-    user: decodeEnv(process.env.POSTGRES_USER),
-    host: decodeEnv(process.env.POSTGRES_HOST),
-    database: decodeEnv(process.env.POSTGRES_DB),
-    password: decodeEnv(process.env.POSTGRES_PASSWORD),
-    port: decodeEnv(process.env.POSTGRES_PORT),
-  }
-  console.log(JSON.stringify(envVar))
   client.connect()
     .then(() => console.log('Connected to PostgreSQL'))
     .catch((err) => console.error('Connection error', err.stack));

@@ -1,6 +1,6 @@
 {
     "name": "mukulsri/test_public",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Node.js application",
     "main": "app.js",
     "scripts": {

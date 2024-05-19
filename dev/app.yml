@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: notes-app-deployment
-        image: mukulsri/test_public:1.0.1
+        image: mukulsri/test_public:1.0.0
         envFrom:
           - configMapRef:
               name: postgres-secret-config-map
