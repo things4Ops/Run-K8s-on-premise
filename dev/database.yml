@@ -24,7 +24,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/postgresql
+    path: /mnt/data/postgres
 
 ---
 apiVersion: v1
