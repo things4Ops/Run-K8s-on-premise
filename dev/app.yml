@@ -19,7 +19,7 @@ spec:
         image: mukulsri/test_public:1.0.0
         envFrom:
           - configMapRef:
-              name: postgres-secret
+              name: postgres-secret-config-map
         resources:
           requests:
             cpu: "100m"
