@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-env
+  name: qa-env
   namespace: argocd # Fixed
 spec:
   project: default
@@ -12,7 +12,7 @@ spec:
     path: dev
   destination: 
     server: https://kubernetes.default.svc
-    namespace: dev-namespace # Will create namespace and deploy everything here only
+    namespace: qa-namespace # Will create namespace and deploy everything here only
 
   syncPolicy:
     syncOptions:
